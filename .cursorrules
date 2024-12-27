@@ -1,0 +1,67 @@
+File structure:
+
+Css: /app/globals.css
+API: /app/api
+Moralis API: /app/api/moralis
+NEXT Auth API: /app/api/auth/[...nextauth].ts
+Hooks: /hooks
+Prisma schema: prisma/schema.prisma
+Components: /components
+Config for Wagmi, AppKit, Chains, Networks, wallet connections: /config/index.ts
+Context: /context/index.tsx
+
+Code Style and Structure:
+- Write concise, technical TypeScript code with accurate examples
+- Use functional and declarative programming patterns; avoid classes
+- Prefer iteration and modularization over code duplication
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError)
+- Structure files: exported component, subcomponents, helpers, static content, typesNaming 
+
+Conventions:
+- Use lowercase with dashes for directories (e.g., components/auth-wizard)- Favor named exports for componentsTypeScript 
+
+Usage:
+- Use TypeScript for all code; prefer interfaces over types
+- Avoid enums; use maps instead
+- Use functional components with TypeScript interfaces
+
+Syntax and Formatting:
+- Use the "function" keyword for pure functions
+- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements
+- Use declarative JSX
+
+Error Handling and Validation:
+- Prioritize error handling: handle errors and edge cases early
+- Use early returns and guard clauses
+- Implement proper error logging and user
+-friendly messages
+- Use Zod for form validation
+- Model expected errors as return values in Server Action
+- Use error boundaries for unexpected errors
+
+UI and Styling:
+- Use Shadcn UI, Radix, and Tailwind Aria for components and styling
+- Implement responsive design with Tailwind CSS; use a mobile-first approachPerformance 
+
+Optimization:
+- Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC)
+- Wrap client components in Suspense with fallback
+- Use dynamic loading for non-critical components
+- Optimize images: use WebP format, include size data, implement lazy loadingKey 
+
+Conventions:
+- Use 'nuqs' for URL search parameter state management
+- Optimize Web Vitals (LCP, CLS, FID)- Limit 'use client':
+- Favor server components and Next.js SSR 
+- Use only for Web API access in small components 
+- Avoid for data fetching or state managementFollow Next.js docs for Data Fetching, Rendering, and Routing
+
+APIs and SDKs to use for Wallet and chain or network handling:
+- Initial setup: Renown AppKit with Wagmi adapter (@reown/appkit-wagmi-adapter)
+- Wallet and account handling:
+- Network and Chain handling: import { mainnet, arbitrum } from '@reown/appkit/networks'
+- Wallet balances for erc20, erc721, erc1155: @moralisweb3/next (Moralis SDK)
+- Market data for erc20 tokens, erc721 and erc1155 NFTs: @moralisweb3/next (Moralis SDK)
+- @tanstack/react-query for QueryClient, QueryClientProvider
+- Fonts: Use font-family: "Roboto Mono", monospace; font-size: 12px; line-height: 16px; or use /app/globals.css.
+
